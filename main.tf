@@ -19,7 +19,7 @@ provider "google" {
 terraform {
   required_version = "~>0.12.0"
     backend "gcs" {
-    bucket  = "mwinslow-tf-state-prod"
+    bucket  = "sed-isg-tf-bucket"
     prefix  = "terraform/state"
   }
 }
