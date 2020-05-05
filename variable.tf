@@ -11,7 +11,7 @@
 variable "project_name" {
   //type        = "string"
   description = "The name of the project to instanciate the instance at."
-  default     = "demos-sed-isg-integdemo"
+  default     = "demos-sed-security-isg"
 }
 
 variable "region_name" {
@@ -41,30 +41,30 @@ variable "image_name" {
 
 variable "network" {
   description = "The name of the subnetwork create this instance in."
-  default     = "mw-isg-intgdemo"
+  default     = "isg-internal"
 }
 
 variable "subnetwork" {
   description = "The name of the subnetwork create this instance in."
-  default     = "mw-cicd-lockdown"
+  default     = "isg-cicd-dev-subnet"
 }
 
 variable "tags" {
   type        = list(string)
-  default     = ["cicd-block-ext","cicd-allow-int"]
+  default     = ["cicd-deny-ext","cicd-allow-int"]
   description = "Network tags, provided as a list"
 }
 
 // Secure Access Cloud
 variable "tenant_domain" {
-  default = "symcmwinslow.luminatesite.com"
+  default = "sasedemo.luminatesec.com"
 }
 variable "luminate_user" {
-  default = "michael.winslow@broadcom.com"
+  default = "michael.winslow@SASEDemo.com"
   //default = "mikewinslow@symcmwinslow.luminatesite.com"
 }
 variable "luminate_group" {
-  default = "Developers"
+  //default = "Developers"
   //default = "Developer"
 }
 
