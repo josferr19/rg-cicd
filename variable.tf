@@ -63,10 +63,10 @@ variable "luminate_user" {
   default = "michael.winslow@SASEDemo.com"
   //default = "mikewinslow@symcmwinslow.luminatesite.com"
 }
-variable "luminate_group" {
+//variable "luminate_group" {
   //default = "Developers"
   //default = "Developer"
-}
+//}
 
 // GitHub
 variable "git_repo" {
