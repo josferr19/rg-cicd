@@ -41,7 +41,7 @@ data "template_file" "startup_script" {
 
 # This creates the google instance
 resource "google_compute_instance" "default" {
-    name = "sac-dev-vm-${random_id.instance_id.hex}"
+    name = "dev-sase-vm-${random_id.instance_id.hex}"
     machine_type = var.machine_size
     zone = var.zone_name
     tags     = var.tags
