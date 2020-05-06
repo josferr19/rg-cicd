@@ -60,7 +60,8 @@ variable "tenant_domain" {
   default = "sasedemo.luminatesec.com"
 }
 variable "luminate_user" {
-  default = "michael.winslow@SASEDemo.com"
+  default = "joe@SASEDemo.com"
+  //default = "michael.winslow@SASEDemo.com"
   //default = "mikewinslow@symcmwinslow.luminatesite.com"
 }
 //variable "luminate_group" {
