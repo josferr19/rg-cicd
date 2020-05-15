@@ -71,6 +71,7 @@ variable "luminate_user" {
 variable "git_repo" {
   default = ""
 }
+
 variable "git_branch" {
   default = ""
 }
