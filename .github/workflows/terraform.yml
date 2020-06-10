@@ -23,7 +23,7 @@ jobs:
       run: |
           mkdir -p .terraform/plugins/linux_amd64/
           cd .terraform/plugins/linux_amd64/
-          curl -L https://github.com/Broadcom/terraform-provider-luminate/releases/latest/download/terraform-provider-luminate-linux.zip -o terraform-provider-luminate-linux.zip
+          curl -L https://github.com/Broadcom/terraform-provider-luminate/releases/download/1.0.5/terraform-provider-luminate-linux.zip -o terraform-provider-luminate-linux.zip
           unzip terraform-provider-luminate-linux.zip
           rm terraform-provider-luminate-linux.zip
     - name: Verify Terraform version
@@ -36,6 +36,14 @@ jobs:
         TF_VAR_git_repo: ${{ github.repository }}
         TF_VAR_git_branch: ${{ github.head_ref }}
       run: terraform init -input=false
+    - name: Terraform plan
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_cred.json
+        LUMINATE_API_CLIENT_ID: ${{ secrets.LUMINATE_API_CLIENT_ID }}
+        LUMINATE_API_CLIENT_SECRET: ${{ secrets.LUMINATE_API_CLIENT_SECRET }}
+        TF_VAR_git_repo: ${{ github.repository }}
+        TF_VAR_git_branch: ${{ github.head_ref }}
+      run: terraform plan -input=false
     - name: Terraform validation
       run: terraform validate
       env:

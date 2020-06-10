@@ -44,7 +44,6 @@ resource "google_compute_instance" "default" {
     name = "dev-sase-vm-${random_id.instance_id.hex}"
     machine_type = var.machine_size
     zone = var.zone_name
-    tags     = var.tags
 boot_disk {
     initialize_params {
         image = var.image_name
@@ -89,13 +88,13 @@ resource "luminate_web_access_policy" "web-access-policy" {
   name                 = "GCP-DEV-access-policy"
   identity_provider_id = data.luminate_identity_provider.idp.identity_provider_id
   user_ids             = data.luminate_user.users.user_ids
-  //group_ids            = data.luminate_group.groups.group_ids
+  group_ids            = data.luminate_group.groups.group_ids
   applications         = [luminate_web_application.nginx.id]
 }
 
 // Change for Account in SAC
 data "luminate_identity_provider" "idp" {
-  identity_provider_name = "local"
+  identity_provider_name = var.luminate_idp
 }
 
 data "luminate_user" "users" {
@@ -103,7 +102,7 @@ data "luminate_user" "users" {
   users                = [var.luminate_user]
 }
 
-//data "luminate_group" "groups" {
-  //identity_provider_id = data.luminate_identity_provider.idp.identity_provider_id
-  //groups               = [var.luminate_group]
-//}
+data "luminate_group" "groups" {
+  identity_provider_id = data.luminate_identity_provider.idp.identity_provider_id
+  groups               = [var.luminate_group]
+}

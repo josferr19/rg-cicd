@@ -48,24 +48,21 @@ variable "subnetwork" {
   default     = "CHANGE-ME"
 }
 
-variable "tags" {
-  type        = list(string)
-  default     = ["CHANGE-ME","CHANGE-ME"]
-  description = "Network tags, provided as a list"
-}
-
 // Secure Access Cloud
 variable "tenant_domain" {
   default = "CHANGE-ME"
+}
+variable "luminate_idp" {
+  default = "local"
 }
 
 variable "luminate_user" {
   default = "CHANGE-ME"
 }
 
-//variable "luminate_group" {
-  //default = "CHANGE-ME"
-//}
+variable "luminate_group" {
+  default = "CHANGE-ME"
+}
 
 // GitHub
 variable "git_repo" {
