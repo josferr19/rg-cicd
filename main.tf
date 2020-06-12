@@ -92,7 +92,6 @@ resource "luminate_web_access_policy" "web-access-policy" {
   applications         = [luminate_web_application.nginx.id]
 }
 
-// Change for Account in SAC
 data "luminate_identity_provider" "idp" {
   identity_provider_name = var.luminate_idp
 }
