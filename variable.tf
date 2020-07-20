@@ -10,17 +10,17 @@
 
 variable "project_name" {
   description = "The name of the project to instanciate the instance at."
-  default     = "CHANGE-ME"
+  default     = "demos-sed-sales-hernandez"
 }
 
 variable "region_name" {
   description = "The region that this terraform configuration will instanciate at."
-  default     = "us-west1"
+  default     = "europe-west1"
 }
 
 variable "zone_name" {
   description = "The zone that this terraform configuration will instanciate at."
-  default     = "us-west1-a"
+  default     = "europe-west1-b"
 }
 
 variable "machine_size" {
@@ -35,28 +35,28 @@ variable "image_name" {
 
 variable "network" {
   description = "The name of the network create this instance in."
-  default     = "CHANGE-ME"
+  default     = "cicd-project"
 }
 
 variable "subnetwork" {
   description = "The name of the subnetwork create this instance in."
-  default     = "CHANGE-ME"
+  default     = "cicd-project-subnet"
 }
 
 // Secure Access Cloud
 variable "tenant_domain" {
-  default = "CHANGE-ME"
+  default = "https://symcrghernandez.luminatesec.com/"
 }
 variable "luminate_idp" {
-  default = "local"
+  default = "Okta_CloudSOC"
 }
 
 variable "luminate_user" {
-  default = "CHANGE-ME"
+  default = "admin@cloudsoclab.com"
 }
 
 variable "luminate_group" {
-  default = "CHANGE-ME"
+  default = "Everyone"
 }
 
 // GitHub
