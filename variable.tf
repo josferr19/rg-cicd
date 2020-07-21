@@ -45,7 +45,7 @@ variable "subnetwork" {
 
 // Secure Access Cloud
 variable "tenant_domain" {
-  default = "https://symcrghernandez.luminatesec.com/"
+  default = "symcrghernandez.luminatesec.com"
 }
 variable "luminate_idp" {
   default = "Okta_CloudSOC"
