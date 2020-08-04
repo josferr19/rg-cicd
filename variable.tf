@@ -48,7 +48,7 @@ variable "tenant_domain" {
   default = "symcrghernandez.luminatesec.com"
 }
 variable "luminate_idp" {
-  default = "Okta_CloudSOC"
+  default = "Okta"
 }
 
 variable "luminate_user" {
